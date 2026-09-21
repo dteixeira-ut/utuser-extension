@@ -2,11 +2,14 @@
 Provides easy access to the utUser object on app.user.testing.
 
 On supported participant completion pages, the extension automatically shows a
-**Retake as fresh participant** card when it can identify the original invite.
-It clears only that test's participant cookie, creates a new tracking ID, and
-opens the same invite again. Nothing appears when the invite cannot be safely
-identified. Supported participant hosts are development-use2, staging-use2,
-and use2.
+**Retake as fresh participant** card. The invite is identified from the referrer,
+from invites recorded when you visited `/se/invite/<audienceId>`, or from the
+`sr-dedup-<audienceId>-u` cookies on the page; when more than one candidate
+exists the card offers a picker. It clears only the selected test's participant
+cookie, creates a new tracking ID, and opens the same invite again. Nothing
+appears when no invite can be identified, and the card reports the failure
+instead of navigating when the cookie cannot be cleared. Supported participant
+hosts are development-use2, staging-use2, and use2.
 
 # How to install
 

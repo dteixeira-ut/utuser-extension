@@ -13,8 +13,13 @@
       "128": "icons/icon128.png"
     }
   },
-  "permissions": ["scripting", "activeTab"],
-  "host_permissions": ["<all_urls>"],
+  "permissions": [
+    "scripting",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
   "content_scripts": [
     {
       "matches": [
@@ -22,8 +27,21 @@
         "https://participant.staging-use2.usertesting.com/candidate/outcome/complete*",
         "https://participant.use2.usertesting.com/candidate/outcome/complete*"
       ],
-      "js": ["participant-retake.js"],
+      "js": [
+        "participant-retake.js"
+      ],
       "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://participant.development-use2.usertesting.com/se/invite/*",
+        "https://participant.staging-use2.usertesting.com/se/invite/*",
+        "https://participant.use2.usertesting.com/se/invite/*"
+      ],
+      "js": [
+        "participant-invite.js"
+      ],
+      "run_at": "document_start"
     }
   ],
   "content_security_policy": {
