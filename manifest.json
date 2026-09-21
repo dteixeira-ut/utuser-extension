@@ -15,6 +15,17 @@
   },
   "permissions": ["scripting", "activeTab"],
   "host_permissions": ["<all_urls>"],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://participant.development-use2.usertesting.com/candidate/outcome/complete*",
+        "https://participant.staging-use2.usertesting.com/candidate/outcome/complete*",
+        "https://participant.use2.usertesting.com/candidate/outcome/complete*"
+      ],
+      "js": ["participant-retake.js"],
+      "run_at": "document_idle"
+    }
+  ],
   "content_security_policy": {
     "extension_pages": "script-src 'self'; object-src 'self';"
   }

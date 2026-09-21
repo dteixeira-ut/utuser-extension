@@ -1,5 +1,12 @@
 # utuser-extension
-Provides easy access to the utUser object on app.user.testing
+Provides easy access to the utUser object on app.user.testing.
+
+On supported participant completion pages, the extension automatically shows a
+**Retake as fresh participant** card when it can identify the original invite.
+It clears only that test's participant cookie, creates a new tracking ID, and
+opens the same invite again. Nothing appears when the invite cannot be safely
+identified. Supported participant hosts are development-use2, staging-use2,
+and use2.
 
 # How to install
 
